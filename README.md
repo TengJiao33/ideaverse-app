@@ -3,6 +3,7 @@
 # IdeaVerse-App 🚀
 
 https://ideaverse-app.vercel.app/
+ideaverse-app.pages.dev
 
 **一个可视化的、基于节点的工作流编辑器，用于构建、测试和管理复杂的 AI Prompt 模板。**
 
