@@ -2,8 +2,11 @@
 
 # IdeaVerse-App 🚀
 
+https://ideaverse-app.vercel.app/
+
 **一个可视化的、基于节点的工作流编辑器，用于构建、测试和管理复杂的 AI Prompt 模板。**
-**写在最前面：**大一下小学期，第一次尝试软件开发，这个功能单调，逻辑尴尬的小软件是我边学习边结合Gemini的建议一点一点写的，充满了稚嫩和懵懂。
+
+**写在最前面：** 大一下小学期，第一次尝试软件开发，这个功能单调，逻辑尴尬的小软件是我边学习边结合Gemini的建议一点一点写的，充满了稚嫩和懵懂。
 
  A visual, node-based workflow editor for building, testing, and managing complex AI prompt templates.
 
