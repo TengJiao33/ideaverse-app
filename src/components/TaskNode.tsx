@@ -1,11 +1,18 @@
 import { Card, Group, Text, Textarea } from '@mantine/core';
 import { IconAbc } from '@tabler/icons-react';
-// ★★★ 核心修改1：只引入最基础的 NodeProps ★★★
-import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 
-// ★★★ 核心修改2：函数签名大大简化，不再使用复杂的泛型 ★★★
-function TaskNode({ data }: NodeProps) {
-  // 因为 App.tsx 会保证传入的 data 是正确的，所以这里可以安全地使用
+// 定义 data 对象的样子，并使用交叉类型 `&` 满足索引签名约束
+type TaskNodeData = {
+  text: string;
+  onDataChange: (data: { text: string }) => void;
+} & Record<string, unknown>;
+
+// 创建一个完整的、具体的节点类型
+type TTaskNode = Node<TaskNodeData>;
+
+// 将完整的节点类型 TTaskNode 传递给 NodeProps
+function TaskNode({ data }: NodeProps<TTaskNode>) {
   const { text, onDataChange } = data;
 
   return (

@@ -1,8 +1,19 @@
 import { Card, Group, Text, Textarea } from '@mantine/core';
 import { IconUserCircle } from '@tabler/icons-react';
-import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 
-function RoleNode({ data }: NodeProps) {
+// 定义 data 类型，并添加索引签名
+type RoleNodeData = {
+  text: string;
+  // 根据 `&&` ，onDataChange 可能不存在，定义为可选属性 `?`
+  onDataChange?: (data: { text: string }) => void;
+} & Record<string, unknown>;
+
+// 步骤2：定义完整的节点类型
+type TRoleNode = Node<RoleNodeData>;
+
+// 步骤3：在 NodeProps 中应用完整的节点类型
+function RoleNode({ data }: NodeProps<TRoleNode>) {
   const { text, onDataChange } = data;
 
   return (

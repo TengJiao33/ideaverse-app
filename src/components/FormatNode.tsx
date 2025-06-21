@@ -1,8 +1,19 @@
 import { Card, Group, Text, Textarea } from '@mantine/core';
 import { IconFileText } from '@tabler/icons-react';
-import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 
-function FormatNode({ data }: NodeProps) {
+// 定义 data 类型，并添加索引签名
+type FormatNodeData = {
+  text: string;
+  //  `&&` 写法，onDataChange 可能不存在
+  onDataChange?: (data: { text: string }) => void;
+} & Record<string, unknown>;
+
+// 定义完整的节点类型
+type TFormatNode = Node<FormatNodeData>;
+
+// 在 NodeProps 中应用完整的节点类型
+function FormatNode({ data }: NodeProps<TFormatNode>) {
   const { text, onDataChange } = data;
 
   return (

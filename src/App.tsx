@@ -14,7 +14,6 @@ import {
   ControlButton,
   type Node,
   type Edge,
-  type Connection,
   type OnNodesChange,
   type OnEdgesChange,
   type OnConnect,
@@ -26,7 +25,7 @@ import RoleNode from './components/RoleNode';
 import FormatNode from './components/FormatNode';
 
 // --- 全局类型和常量定义 ---
-type NodeData = {
+export type NodeData = {
   text: string;
   onDataChange?: (data: { text: string }) => void;
 };
